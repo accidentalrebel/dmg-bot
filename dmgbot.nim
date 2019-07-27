@@ -1,5 +1,6 @@
 import nimpy
 import os
+from osproc import execCmdEx
 from strutils import replace
 
 let webvtt = pyImport("webvtt")
@@ -11,10 +12,11 @@ const outputExt = ".en.vtt"
 let fileName = paramStr(1)
 let youtubeUrl = paramStr(2)
 
-var youtubeDlCmd: string = "youtube-dl --write-auto-sub --sub-lang en --skip-download -o " & outputPath & ".vtt " & youtubeUrl
+var youtubeDlCmd: string = "youtube-dl --write-auto-sub --sub-lang en --skip-download --get-title -o " & outputPath & ".vtt " & youtubeUrl
 echo "Cmd: " & youtubeDlCmd
 
-discard execShellCmd(youtubeDlCmd)
+let (title, errorCode) = execCmdEx(youtubeDlCmd)
+echo "Title: " & title
 
 let file = open("./output/" & fileName & ".txt", fmWrite)
 
