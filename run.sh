@@ -1,2 +1,2 @@
 #!/bin/sh
-nim c -r -o:bin/ dmgbot.nim
+nim c -r -o:bin/ dmgbot.nim $1
