@@ -28,6 +28,7 @@ let file = open("./output/" & filename & ".txt", fmWrite)
 file.writeLine(title)
 file.writeLine("==============================")
 file.writeLine("https://www.patreon.com/goodtradesbrigade/posts")
+file.writeLine("Subtitles downloaded and cleaned by DMG Bot (https://github.com/accidentalrebel/dmg-bot)")
 file.writeLine("==============================\n")
 
 let lines = webvtt.read(outputPath & outputExt)
