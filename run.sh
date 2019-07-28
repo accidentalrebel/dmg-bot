@@ -1,2 +1,2 @@
 #!/bin/sh
-nim c -r -o:bin/ dmgbot.nim $1 $2
+nim c -r --verbosity:0 --hints:off -o:bin/ dmgbot.nim $1
